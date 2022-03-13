@@ -1,0 +1,194 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v1",
+        "update_url": null
+    },
+    "exported_at": "2022-03-13T14:57:33+00:00",
+    "name": "Share (sharex)",
+    "author": "me@luxxy.xyz",
+    "description": "sharex egg from https:\/\/github.com\/MrDemonWolf\/share",
+    "features": null,
+    "images": [
+        "quay.io\/parkervcp\/pterodactyl-images:debian_nodejs-14"
+    ],
+    "file_denylist": [],
+    "startup": "\/usr\/local\/bin\/node \/home\/container\/src\/index.js",
+    "config": {
+        "files": "{}",
+        "startup": "{\r\n    \"done\": \"\"\r\n}",
+        "logs": "{}",
+        "stop": "^c"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#\/bin\/ash\r\napt update\r\n\r\napt upgrade -y\r\n\r\napt install -y git curl jq file unzip make gcc g++ python python-dev libtool\r\n\r\ncd \/mnt\/server\r\n\r\ngit clone https:\/\/github.com\/MrDemonWolf\/share.git .\r\n\r\n\/usr\/local\/bin\/npm install\r\n\/usr\/local\/bin\/npm run install\r\n\r\necho -e \"install complete\"\r\nexit 0",
+            "container": "node:14-buster-slim",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Database URL (mongodb)",
+            "description": "the url of mongodb database",
+            "env_variable": "DATABASE_URI",
+            "default_value": "mongodb:\/\/localhost:27017\/share",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:100"
+        },
+        {
+            "name": "SESSION_SECRET",
+            "description": "random number of string",
+            "env_variable": "SESSION_SECRET",
+            "default_value": "auhsdfhuafsa89423198",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:100"
+        },
+        {
+            "name": "Title",
+            "description": "title of the website name",
+            "env_variable": "TITLE",
+            "default_value": "Share",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:100"
+        },
+        {
+            "name": "short title",
+            "description": "short title",
+            "env_variable": "SHORT_TITLE",
+            "default_value": "Share",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:100"
+        },
+        {
+            "name": "Full Domain",
+            "description": "domain of the share",
+            "env_variable": "FULL_DOMAIN",
+            "default_value": "https:\/\/www.example.com",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:100"
+        },
+        {
+            "name": "Footer Text",
+            "description": "",
+            "env_variable": "FOOTER_TEXT",
+            "default_value": "Share",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:100"
+        },
+        {
+            "name": "Title on home page",
+            "description": "",
+            "env_variable": "DESC",
+            "default_value": "Advanced uploader with web front-end for images,files,and text. Built with ShareX in mind. Licensed under MIT and is free to use.",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:100"
+        },
+        {
+            "name": "Send grid API key",
+            "description": "",
+            "env_variable": "SENDGRID_API_KEY",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:100"
+        },
+        {
+            "name": "Email Domain",
+            "description": "",
+            "env_variable": "EMAIL_DOMAIN",
+            "default_value": "m.example.com",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:20"
+        },
+        {
+            "name": "Email From",
+            "description": "",
+            "env_variable": "EMAIL_FROM",
+            "default_value": "'Share'",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:20"
+        },
+        {
+            "name": "File Check",
+            "description": "File check system",
+            "env_variable": "FILE_CHECK",
+            "default_value": "true",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:20"
+        },
+        {
+            "name": "Credit",
+            "description": "Show credit to author and or show the version",
+            "env_variable": "CREDIT",
+            "default_value": "true",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:20"
+        },
+        {
+            "name": "Show verison",
+            "description": "",
+            "env_variable": "SHOW_VERSION",
+            "default_value": "true",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:20"
+        },
+        {
+            "name": "Allow Sign up",
+            "description": "Enable or disable signup and or the terms",
+            "env_variable": "SIGNUPS",
+            "default_value": "true",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:20"
+        },
+        {
+            "name": "Owner",
+            "description": "owner onl;y",
+            "env_variable": "OWNER",
+            "default_value": "true",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:20"
+        },
+        {
+            "name": "LOGGER",
+            "description": "Logger",
+            "env_variable": "LOGGER",
+            "default_value": "true",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:20"
+        },
+        {
+            "name": "PORT",
+            "description": "port to server run on",
+            "env_variable": "PORT",
+            "default_value": "3000",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:100"
+        },
+        {
+            "name": "JWT_SECRET",
+            "description": "",
+            "env_variable": "JWT_SECRET",
+            "default_value": "sadjiuiasdfbiufadsbuifas",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:100"
+        }
+    ]
+}
