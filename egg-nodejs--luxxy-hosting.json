@@ -1,22 +1,24 @@
 {
     "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
     "meta": {
-        "version": "PTDL_v1",
+        "version": "PTDL_v2",
         "update_url": null
     },
-    "exported_at": "2022-05-18T14:13:06+01:00",
+    "exported_at": "2023-10-19T12:16:43+01:00",
     "name": "Nodejs (Luxxy Hosting)",
     "author": "me@luxxy.xyz",
     "description": null,
     "features": null,
-    "images": [
-        "ghcr.io\/luxxy-gf\/nodejs_12",
-        "ghcr.io\/luxxy-gf\/nodejs_14",
-        "ghcr.io\/luxxy-gf\/nodejs_15",
-        "ghcr.io\/luxxy-gf\/nodejs_16",
-        "ghcr.io\/luxxy-gf\/nodejs_17",
-        "ghcr.io\/luxxy-gf\/nodejs_18"
-    ],
+    "docker_images": {
+        "ghcr.io\/luxxy-gf\/nodejs_12": "ghcr.io\/luxxy-gf\/nodejs_12",
+        "ghcr.io\/luxxy-gf\/nodejs_14": "ghcr.io\/luxxy-gf\/nodejs_14",
+        "ghcr.io\/luxxy-gf\/nodejs_15": "ghcr.io\/luxxy-gf\/nodejs_15",
+        "ghcr.io\/luxxy-gf\/nodejs_16": "ghcr.io\/luxxy-gf\/nodejs_16",
+        "ghcr.io\/luxxy-gf\/nodejs_17": "ghcr.io\/luxxy-gf\/nodejs_17",
+        "ghcr.io\/luxxy-gf\/nodejs_18": "ghcr.io\/luxxy-gf\/nodejs_18",
+        "ghcr.io\/luxxy-gf\/nodejs_19": "ghcr.io\/luxxy-gf\/nodejs_19",
+        "ghcr.io\/luxxy-gf\/nodejs_20": "ghcr.io\/luxxy-gf\/nodejs_20"
+    },
     "file_denylist": [],
     "startup": "\/start.sh",
     "config": {
@@ -40,7 +42,8 @@
             "default_value": "npm install --save --production",
             "user_viewable": true,
             "user_editable": true,
-            "rules": "required|string|max:256"
+            "rules": "required|string|max:256",
+            "field_type": "text"
         },
         {
             "name": "Startup Command 2 (Optional)",
@@ -49,7 +52,8 @@
             "default_value": "node .",
             "user_viewable": true,
             "user_editable": true,
-            "rules": "nullable|string|max:256"
+            "rules": "nullable|string|max:256",
+            "field_type": "text"
         }
     ]
 }
