@@ -4,7 +4,7 @@
         "version": "PTDL_v2",
         "update_url": null
     },
-    "exported_at": "2023-10-19T12:16:43+01:00",
+    "exported_at": "2025-05-11T19:09:19+01:00",
     "name": "Nodejs (Luxxy Hosting)",
     "author": "me@luxxy.xyz",
     "description": null,
@@ -17,7 +17,10 @@
         "ghcr.io\/luxxy-gf\/nodejs_17": "ghcr.io\/luxxy-gf\/nodejs_17",
         "ghcr.io\/luxxy-gf\/nodejs_18": "ghcr.io\/luxxy-gf\/nodejs_18",
         "ghcr.io\/luxxy-gf\/nodejs_19": "ghcr.io\/luxxy-gf\/nodejs_19",
-        "ghcr.io\/luxxy-gf\/nodejs_20": "ghcr.io\/luxxy-gf\/nodejs_20"
+        "ghcr.io\/luxxy-gf\/nodejs_20": "ghcr.io\/luxxy-gf\/nodejs_20",
+        "ghcr.io\/luxxy-gf\/nodejs_21": "ghcr.io\/luxxy-gf\/nodejs_21",
+        "ghcr.io\/luxxy-gf\/nodejs_22": "ghcr.io\/luxxy-gf\/nodejs_22",
+        "ghcr.io\/luxxy-gf\/nodejs_23": "ghcr.io\/luxxy-gf\/nodejs_23"
     },
     "file_denylist": [],
     "startup": "\/start.sh",
