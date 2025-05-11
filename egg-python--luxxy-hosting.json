@@ -4,7 +4,7 @@
         "version": "PTDL_v2",
         "update_url": null
     },
-    "exported_at": "2022-06-17T17:15:33+01:00",
+    "exported_at": "2025-05-11T19:20:50+01:00",
     "name": "Python (Luxxy Hosting)",
     "author": "me@luxxy.xyz",
     "description": null,
@@ -16,7 +16,10 @@
         "ghcr.io\/luxxy-gf\/python_3.7": "ghcr.io\/luxxy-gf\/python_3.7",
         "ghcr.io\/luxxy-gf\/python_3.8": "ghcr.io\/luxxy-gf\/python_3.8",
         "ghcr.io\/luxxy-gf\/python_3.9": "ghcr.io\/luxxy-gf\/python_3.9",
-        "ghcr.io\/luxxy-gf\/python_3.10": "ghcr.io\/luxxy-gf\/python_3.10"
+        "ghcr.io\/luxxy-gf\/python_3.10": "ghcr.io\/luxxy-gf\/python_3.10",
+        "ghcr.io\/luxxy-gf\/python_3.11": "ghcr.io\/luxxy-gf\/python_3.11",
+        "ghcr.io\/luxxy-gf\/python_3.12": "ghcr.io\/luxxy-gf\/python_3.12",
+        "ghcr.io\/luxxy-gf\/python_3.13": "ghcr.io\/luxxy-gf\/python_3.13"
     },
     "file_denylist": [],
     "startup": "\/start.sh",
