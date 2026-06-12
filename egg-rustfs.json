@@ -1,0 +1,82 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2026-06-12T00:00:00+00:00",
+    "name": "RustFS",
+    "author": "me@luxxy.xyz",
+    "description": "RustFS is a high-performance distributed object storage server written in Rust, compatible with the Amazon S3 API. A drop-in MinIO alternative released under Apache License v2.",
+    "features": null,
+    "docker_images": {
+        "ghcr.io\/ptero-eggs\/yolks:debian": "ghcr.io\/ptero-eggs\/yolks:debian"
+    },
+    "file_denylist": [],
+    "startup": ".\/rustfs \/home\/container\/data --address 0.0.0.0:{{SERVER_PORT}} --console-address 0.0.0.0:{{CONSOLE_PORT}}",
+    "config": {
+        "files": "{}",
+        "startup": "{\r\n    \"done\": \"rustfs\"\r\n}",
+        "logs": "{}",
+        "stop": "^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/bash\r\n#\r\n# RustFS Installation Script\r\n#\r\napt update\r\napt install -y wget unzip\r\n\r\nARCH=$([[ \"$(uname -m)\" == \"x86_64\" ]] && echo \"x86_64\" || echo \"aarch64\")\r\nVERSION=${RUSTFS_VERSION:-latest}\r\n\r\ncd \/mnt\/server\r\n\r\nwget -O rustfs.zip \"https:\/\/dl.rustfs.com\/artifacts\/rustfs\/release\/rustfs-linux-${ARCH}-musl-${VERSION}.zip\"\r\nunzip -o rustfs.zip rustfs\r\nrm -f rustfs.zip\r\nchmod +x rustfs\r\n\r\nmkdir -p data logs\r\n\r\necho \"-----------------------------------------\"\r\necho \"Installation completed!\"\r\necho \"-----------------------------------------\"",
+            "container": "ghcr.io\/ptero-eggs\/installers:debian",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Access Key",
+            "description": "The access key (username) for the S3 API and console. Change this from the default!",
+            "env_variable": "RUSTFS_ACCESS_KEY",
+            "default_value": "rustfsadmin",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|min:3|max:64",
+            "field_type": "text"
+        },
+        {
+            "name": "Secret Key",
+            "description": "The secret key (password) for the S3 API and console. Change this from the default!",
+            "env_variable": "RUSTFS_SECRET_KEY",
+            "default_value": "rustfsadmin",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|min:8|max:64",
+            "field_type": "text"
+        },
+        {
+            "name": "Version",
+            "description": "The RustFS version to install. Use 'latest' or a release tag like 'v1.0.0-beta.8'. Reinstall the server to apply.",
+            "env_variable": "RUSTFS_VERSION",
+            "default_value": "latest",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:32",
+            "field_type": "text"
+        },
+        {
+            "name": "Enable Console",
+            "description": "Enable the embedded RustFS web console.",
+            "env_variable": "RUSTFS_CONSOLE_ENABLE",
+            "default_value": "true",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|in:true,false",
+            "field_type": "text"
+        },
+        {
+            "name": "Console Port",
+            "description": "Port for the web console (binds to 0.0.0.0). Set this to an additional allocation assigned to this server.",
+            "env_variable": "CONSOLE_PORT",
+            "default_value": "9001",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|numeric|between:1024,65535",
+            "field_type": "text"
+        }
+    ]
+}
